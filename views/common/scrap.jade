@@ -1,0 +1,18 @@
+extends ../layouts/main
+
+block content
+    h1 Scrap Asset
+    form(action="" method="POST" id="scrapIssue")
+        label(for="assetId") Select Asset:
+        select(name="assetId", required id='assetId')
+            each asset in assets
+                option(value=asset.id)= asset.name  
+        label(for="reason") Reason 
+        input(type="text" required id='reason')
+        button(type="submit") scrap Asset
+        a.btn.btn-secondary(href='/home') Back
+
+
+    link(rel='stylesheet' href='/css/common.css')
+    script(src="/js/common.js")
+

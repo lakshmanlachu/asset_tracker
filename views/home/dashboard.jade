@@ -1,0 +1,45 @@
+
+block content
+
+    .container
+        h1(style='text-align: center;') Welcome to Asset Management System
+            .logout-link-container
+                #user
+                a(href="#", onclick="logout(); return false;") Logout
+                hr 
+                h2(style='text-align: center;') 
+                .quick-links-container
+                    .quick-links-container
+                    a.quick-link(href="/employee/list")
+                        div
+                            i.fa.fa-users
+                            p Employee Master
+                    a.quick-link(href="/category/list")
+                        div
+                            i.fa.fa-folder
+                            p Category Master
+                    a.quick-link(href="/assets/list")
+                        div
+                            i.fa.fa-desktop
+                            p Asset Master
+                    a.quick-link(href="/assets/stock")
+                        div
+                            i.fa.fa-cubes
+                            p Stock View
+                    a.quick-link(href="assets/issue")
+                        div
+                            i.fa.fa-plus-circle
+                            p Issue Asset
+                    a.quick-link(href="assets/return")
+                        div
+                            i.fa.fa-reply
+                            p Return Asset
+                    a.quick-link(href="assets/scrap")
+                        div
+                            i.fa.fa-trash
+                            p Scrap Asset
+                    
+
+
+link(rel='stylesheet' href='/css/home.css')
+script(src="/js/home.js")

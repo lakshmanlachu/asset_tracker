@@ -1,0 +1,11 @@
+extends ../layouts/main
+
+block content
+  div.container
+    h1 Category Details
+    dl
+      dt Name:
+      dd= category.name
+      dt Description:
+      dd= category.description
+    a.btn.btn-primary(href='/category/list') Back

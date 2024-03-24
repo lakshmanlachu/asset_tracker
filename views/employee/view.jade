@@ -1,0 +1,13 @@
+extends ../layouts/main
+
+block content
+  div.container
+    h1 Employee Details
+    dl
+      dt Name:
+      dd= employee.name
+      dt Department:
+      dd= employee.department
+      dt Email:
+      dd= employee.email
+    a.btn.btn-primary(href='/employee/list') Back

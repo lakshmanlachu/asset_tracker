@@ -1,0 +1,18 @@
+extends ../layouts/main
+
+block content
+  div.container
+    h1 Edit Category
+    form(action='' method='POST' id="editCategoryForm")
+      input(type='hidden' name='_method' value='PUT')
+      div.form-group
+        label(for='name') Name:
+        input#name.form-control(type='text' name='name' value=category.name required)
+      div.form-group
+        label(for='description') Description:
+        input#description.form-control(type='text' name='description' value=category.description required)
+
+      button.btn.btn-primary(type='submit') Update
+      a.btn.btn-secondary(href='/category/list') Back
+
+      script(src="/js/category.js")     

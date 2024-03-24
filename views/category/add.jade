@@ -1,0 +1,15 @@
+extends ../layouts/main
+
+block content
+  div.container
+    h1 Add Category
+    form(action='' method='POST' id='addCategoryForm')
+      div.form-group
+        label(for='name') Name:
+        input#name.form-control(type='text' name='name', required)
+      div.form-group
+        label(for='description') Description:
+        input#description.form-control(type='text' name='description', required)
+      button.btn.btn-primary(type='submit') Add
+
+script(src="/js/category.js")     

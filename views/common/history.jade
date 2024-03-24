@@ -1,0 +1,32 @@
+extends ../layouts/main
+
+block content
+    h1 Asset History
+
+    h2 Asset Details
+    p
+        strong>ID:</strong> #{asset.id}
+    p
+        strong>Name:</strong> #{asset.name} 
+    a.btn.btn-secondary(href='/home') Back
+
+    h2 Asset Transaction History
+    if history.length === 0
+        p No transaction history available for this asset.
+    else
+        table
+            thead
+                tr
+                    th Transaction Type
+                    th Employee
+                    th Reason
+                    th Date
+            tbody
+                each transaction in history
+                    tr
+                        td= transaction.type
+                        td= transaction.dataValues.Employee.name 
+                        td= transaction.reason
+                        td= new Date(transaction.createdAt).toLocaleDateString()
+
+        link(rel='stylesheet' href='/css/common.css')

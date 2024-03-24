@@ -1,0 +1,42 @@
+extends ../layouts/main
+
+block content
+    div.container
+        h1 Assets List
+        a.btn.btn-primary(href='/assets/add') Add Assets
+        a.btn.btn-secondary(href='/home') Back Home
+        //- form#searchForm.form-inline.mb-2
+        //-     input#searchInput.form-control(type='text' placeholder='Search')
+        //-     button#searchBtn.btn.btn-primary(type='button') Search
+        table#assetTable.table.table-striped.table-bordered
+            thead
+                tr
+                    th Name
+                    th Serial Number
+                    th Category
+                    th Branch
+                    th Purchase Date
+                    th Status
+                    th Action
+            tbody
+                each asset in assets
+                    tr
+                        td= asset.name
+                        td= asset.serial_number
+                        td= asset.Category.name
+                        td= asset.branch
+                        td= new Date(asset.purchase_date).toLocaleDateString()
+                        td= asset.status
+                        td
+                            a.btn.btn-info(href='/assets/view/' + asset.id) View
+                            a.btn.btn-warning(href='/assets/edit/' + asset.id ) Edit
+                            button.btn.btn-danger(type='button' onclick='deleteAssets("#{asset.id}")') Delete
+
+                            form(action='/assets/history/' + asset.id  method='GET' style='display:inline;')
+                                button.btn.btn-primary(type='submit') History
+                                
+        script(src="/js/assets.js")     
+        script.
+            $(document).ready(function() {
+                $('#assetTable').DataTable({"searching":true});
+            });

@@ -1,0 +1,36 @@
+extends ../layouts/main
+
+block content
+  div.container
+    h1 Employee List
+    a.btn.btn-primary(href='/employee/add') Add Employee
+    a.btn.btn-secondary(href='/home') Back Home
+    table#employeeTable.table.table-striped.table-bordered
+      thead
+        tr
+          th Name
+          th Department
+          th Email
+          th Status
+          th Actions
+      tbody
+        each employee in employees
+          tr
+            td= employee.name
+            td= employee.department
+            td= employee.email
+            td
+              if employee.is_active
+                span.label.label-success Active
+              else
+                span.label.label-danger Inactive
+            td
+              a.btn.btn-info(href='/employee/view/' + employee.employee_id) View
+              a.btn.btn-warning(href='/employee/edit/' + employee.employee_id ) Edit
+              button.btn.btn-danger(type='button' onclick='deleteEmployee("#{employee.employee_id}")') Delete
+              button.btn.btn-primary(type='button' onclick='toggleEmployeeStatus("#{employee.employee_id}")') Toggle Status
+  script(src="/js/employess.js")     
+    script.
+      $(document).ready(function() {
+        $('#employeeTable').DataTable();
+      });

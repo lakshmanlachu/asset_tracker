@@ -1,0 +1,20 @@
+
+extends ../layouts/main
+
+block content
+  div.container
+    h1 Assets Details
+    dl
+      dt Name:
+      dd= assets.name
+      dt Serial Number:
+      dd= assets.serial_number
+      dt Branch:
+      dd= assets.branch
+      dt Category:
+      dd= assets.category
+      dt Purchase Date:
+      dd= new Date(assets.purchase_date).toLocaleDateString()
+      dt status:
+      dd= assets.status
+    a.btn.btn-primary(href='/assets/list') Back

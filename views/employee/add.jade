@@ -1,0 +1,19 @@
+extends ../layouts/main
+
+block content
+  div.container
+    h1 Add Employee
+    form(action='' method='POST' id='addEmployeeForm')
+      div.form-group
+        label(for='name') Name:
+        input#name.form-control(type='text' name='name', required)
+      div.form-group
+        label(for='department') Department:
+        input#department.form-control(type='text' name='department', required)
+      div.form-group
+        label(for='email') Email:
+        input#email.form-control(type='email' name='email', required)
+      button.btn.btn-primary(type='submit') Add
+
+  link(rel='stylesheet' href='/css/employee.css')
+  script(src="/js/employess.js")     

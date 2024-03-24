@@ -1,0 +1,23 @@
+extends ../layouts/main
+
+block content
+
+    if totalsByBranch.length > 0
+        h3 Totals by Branch
+        table.table.table-striped
+            thead
+                tr
+                    th Branch
+                    th Total Assets
+            tbody
+                each total in totalsByBranch
+                    tr
+                     
+                        td= total.branch
+                        td= total.dataValues.totalAssets
+
+        p Total Value across all branches: #{totalValue}
+    else
+        p No assets in stock.
+
+    a.btn.btn-primary(href='/home') Back

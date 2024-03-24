@@ -1,0 +1,21 @@
+extends ../layouts/main
+
+block content
+  h1 Return Asset
+  form(action="" method="POST" id="returnIssue")
+    label(for="assetId") Select Asset:
+    select(name="assetId", required id='assetId')
+      each asset in assets
+        option(value=asset.id)= asset.name 
+    label(for="employeeId" ) Select Employee:
+    select(name="employeeId", required id='employeeId')
+      each employee in employees
+        option(value=employee.employee_id)= employee.name 
+    label(for="reason") Reason 
+    input(type="text" required id='reason')
+    button(type="submit") Return Asset
+    a.btn.btn-secondary(href='/home') Back
+
+    link(rel='stylesheet' href='/css/common.css')
+    script(src="/js/common.js")
+

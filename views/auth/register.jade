@@ -1,0 +1,31 @@
+extends ../layouts/main.jade
+
+block content
+  .container
+  .center
+    h1 Register
+    form(action="" method="POST" id="register-form")
+      .txt_field
+        input(type="name" id="name" name="name" required)
+        span
+        label(for="name") Name:
+      .txt_field
+        input(type="email" id="email" name="email" required)
+        span
+        label(for="email") Email:
+      .txt_field
+        input(type="password" id="password" name="password" required)
+        span
+        label(for="password") Password:
+      .txt_field
+        input(type="password" id="confirm_password" name="confirm_password" required)
+        span
+        label(for="confirm-password") Confirm Password:
+        span#error-message(style='color: red; display: none;') Passwords do not match
+      input(type="submit" value="Register")
+      .sign_link
+    | Already have an account?
+    a(href="/login") Login
+  link(rel="stylesheet" href="/css/register.css")
+  script(src="/js/register.js")
+  

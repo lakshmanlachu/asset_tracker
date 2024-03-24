@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  background: linear-gradient(120deg, #007bff, #d0314c);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.quick-links-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quick-link {
+  margin: 10px;
+  text-align: center;
+}
+
+.quick-link a {
+  text-decoration: none;
+  color: #333;
+}
+
+.quick-link i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.quick-link p {
+  font-size: 14px;
+}
+
+.quick-link div {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.quick-link a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.quick-link a:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+.header {
+  background-color: #2691d9;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header a {
+  color: white;
+  /* Link color */
+  text-decoration: none;
+  /* Remove underline */
+  margin-right: 20px;
+  /* Add some spacing between links */
+}
+
+.header a:last-child {
+  margin-right: 0;
+  /* Remove margin for the last link */
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logout-link-container {
+  text-align: right;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.quick-links-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quick-link {
+  width: 150px;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.quick-link:hover {
+  background-color: #e0e0e0;
+}
+
+.quick-link a {
+  text-decoration: none;
+  color: #333;
+}
+
+.quick-link i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}

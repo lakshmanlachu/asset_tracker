@@ -1,0 +1,27 @@
+extends ../layouts/main
+
+block content
+  div.container
+    h1 Edit Employee
+    form(action='' method='POST' id="editEmployeeForm")
+      input(type='hidden' name='_method' value='PUT')
+      div.form-group
+        label(for='name') Name:
+        input#name.form-control(type='text' name='name' value=employee.name required)
+      div.form-group
+        label(for='department') Department:
+        input#department.form-control(type='text' name='department' value=employee.department required)
+      div.form-group
+        label(for='email') Email:
+        input#email.form-control(type='email' name='email' value=employee.email required)
+      div.form-group
+        label(for='is_active') Active:
+        select#is_active.form-control(name='is_active' required)
+          option(value='true' selected=employee.is_active) Active
+          option(value='false' selected=!employee.is_active) Inactive
+
+      button.btn.btn-primary(type='submit') Update
+      a.btn.btn-secondary(href='/employee/list') Back
+
+  link(rel='stylesheet' href='/css/employee.css')
+  script(src="/js/employess.js") 
