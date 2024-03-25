@@ -1,4 +1,4 @@
-import { check, validationResult } from "express-validator"
+import { check, validationResult ,param} from "express-validator"
 let validator = {};
 
 

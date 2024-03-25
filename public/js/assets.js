@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : '';
     if (user) {
         var addAssetForm = document.getElementById('addAssetForm');
-        var editassetForm = document.getElementById('editassetForm');
+        var editassetForm = document.getElementById('editAssetForm');
         if (addAssetForm)
             addAssetForm.addEventListener('submit', function (event) {
                 event.preventDefault();
@@ -36,17 +36,18 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         if (editassetForm)
             editassetForm.addEventListener('submit', function (event) {
+                console.log("called");
                 event.preventDefault();
                 const url = window.location.href;
                 const id = url.substring(url.lastIndexOf('/') + 1);
-                const formData = new FormData(editAssetForm);
+                const formData = new FormData(editassetForm);
                 const jsonData = {};
 
                 for (const [key, value] of formData.entries()) {
                     jsonData[key] = value;
                 }
 
-
+                console.log('sss', jsonData);
                 fetch(`/assets/editform/${id}`, {
                     method: 'POST',
                     headers: {
@@ -94,4 +95,4 @@ function deleteAssets(assetsId) {
                 console.error('Error:', error);
             });
     }
-}
+};
