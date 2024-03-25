@@ -16,7 +16,7 @@ employeeRoute.get('/view/:id', getEditEmployeeForm);
 
 employeeRoute.get('/edit/:id', editEmployee);
 
-employeeRoute.post('/editform/:id', updateEmployee);
+employeeRoute.post('/editform/:id', validator.editEmployee, updateEmployee);
 
 employeeRoute.get('/toggle-status/:id', toggleEmployeeStatus);
 

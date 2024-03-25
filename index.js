@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 // Set Jade as the view engine
 app.set('view engine', 'jade');
 
@@ -53,7 +54,7 @@ app.get('/home', (req, res) => {
 });
 
 
-sequelize.sync() // Sync database models with database schema
+sequelize.sync()
     .then(() => {
         app.listen(CONFIG.PORT, () => {
             console.log(`Server running in ${CONFIG.ENV} mode on port ${CONFIG.PORT}`);

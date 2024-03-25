@@ -11,7 +11,7 @@ assetsRoute.get('/list', getAllAssets);
 
 assetsRoute.get('/add', getAddAssetsForm);
 
-assetsRoute.post('/addform',validator.addassets, addAsset);
+assetsRoute.post('/addform', validator.addassets, addAsset);
 
 assetsRoute.get('/categories', getcategories);
 
@@ -20,7 +20,7 @@ assetsRoute.get('/view/:id', getEditAssetsForm);
 
 assetsRoute.get('/edit/:id', editAssets);
 
-assetsRoute.post('/editform/:id', updateAssets);
+assetsRoute.post('/editform/:id', validator.editassets, updateAssets);
 
 assetsRoute.post('/delete/:id', deleteAssets);
 
